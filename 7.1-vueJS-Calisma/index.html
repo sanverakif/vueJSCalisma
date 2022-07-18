@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src=""></script>
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://unpkg.com/vue@next"></script>
+
+    <style>
+        .backgroundColor {
+            background-color: red;
+        }
+        
+        .borderColor {
+            border: 2px solid red;
+        }
+        
+        .fontColor {
+            color: green;
+        }
+        
+        .borderRadius {
+            border-radius: 5px;
+        }
+        
+        .fontItalic {
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="container">
+            <ul>
+                <li>
+                    <input type="checkbox" v-model="style.backgroundColor">
+                    <span>
+                       backgroundColor
+                    </span>
+                </li>
+                <li>
+                    <input type="checkbox" v-model="style.fontColor">
+                    <span>
+                       fontColor
+                    </span>
+                </li>
+                <li>
+                    <input type="checkbox" v-model="style.borderColor">
+                    <span>
+                        borderColor
+                    </span>
+                </li>
+                <li>
+                    <input type="checkbox" v-model="style.borderRadius">
+                    <span>
+                     borderRadius
+                    </span>
+                </li>
+                <li>
+                    <input type="checkbox" v-model="style.fontItalic">
+                    <span>
+                       fontItalic
+                    </span>
+                </li>
+            </ul>
+            <textarea rows="5" :class="containerProperties"></textarea>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>

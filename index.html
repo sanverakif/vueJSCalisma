@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <button id="tikla">a</button>
+    <h2>JavaScript HTML DOM</h2>
+
+    <div id="main">
+        <p>Finding HTML Elements by Tag Name</p>
+        <p>This example demonstrates the <b>getElementsByTagName</b> method.</p>
+    </div>
+
+    <p id="demo"></p>
+
+    <p id="saat"></p>
+
+    <form name="myForm" onsubmit="return validateForm()" method="post">
+        Name: <input type="text" name="fname">
+        <input type="submit" value="Submit">
+    </form>
+    <h1 onclick="this.innerHTML = 'Ooops!'">Click on this text!</h1>
+    <h3 onclick="changetText(this)">..</h3>
+    <button onclick="displayDate()">date</button>
+    <h3 id="date"></h3>
+    <button id="buton">btn</button><br>
+    <input id="txt" type="text" onchange="textUpper()"><br>
+    <button id="clickBtn">sonuç</button>
+    <p id="result">result</p>
+
+    <a>akif</a>
+    <p id="bul"></p>
+
+    <h1>Welcome</h1>
+    <h4>This is the welcome message.</h4>
+    <h2>Technology</h2>
+    <h4 id="second">This is the technology section.</h4>
+    <small>akif</small>
+    <small>emre</small>
+    <small>sanver</small>
+    <script>
+        var paragraphs = document.getElementsByTagName("h4");
+        alert("Content in the second paragraph is " + paragraphs[1].innerHTML);
+        document.getElementById("second").innerHTML = "The orginal message is changed.";
+
+        var tag = document.querySelector("a")
+        tag.getAttribute("href")
+        tag.setAttribute("href", "www.google.com")
+        tag.style.color = "red"
+        const x = document.getElementById("main");
+        const y = x.getElementsByTagName("p");
+
+        document.getElementById("tikla").onclick = function() {
+            alert("akif")
+        }
+
+        document.getElementById("demo").innerHTML =
+            'The first paragraph (index 0) inside "main" is: ' + y[0].innerHTML;
+
+        document.getElementById("saat").innerHTML = "Date : " + Date();
+
+        document.write(Date());
+
+        function validateForm() {
+            let x = document.forms["myForm"]["fname"].value;
+            if (x == "") {
+                alert("Name must be filled out");
+                return false;
+            }
+        }
+
+        function changetText(isim) {
+            isim.innerHTML = "akif"
+        }
+
+        function displayDate() {
+            document.getElementById("date").innerHTML = Date()
+        }
+        document.getElementById("buton").onclick = displayDate;
+
+        function textUpper() {
+            const a = document.getElementById("txt");
+            a.value = a.value.toUpperCase();
+
+        }
+        let p = 1
+        let r = 2
+        document.getElementById("clickBtn").addEventListener("click", function() {
+            sum(p, r)
+        })
+
+        function sum(a, b) {
+            document.getElementById("result").innerHTML = a * b
+        }
+    </script>
+
+</body>
+
+</html>

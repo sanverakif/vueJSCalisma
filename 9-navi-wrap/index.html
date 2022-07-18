@@ -6,19 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
     <script src="https://unpkg.com/vue@next"></script>
-
 </head>
 
 <body>
     <div id="app">
-        <input type="text" v-model="todoText">
-        <button @click="addTodo">Ekle</button>
-        <ul v-for="item in todoList" :key="item">
-            <li>{{item}}</li>
-        </ul>
+        <div class="container"></div>
     </div>
-    <script src="index.js"></script>
+    <script src="app.js"></script>
 </body>
 
 </html>

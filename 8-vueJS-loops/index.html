@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src=""></script>
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div class="container">
+            <p>{{getRandom() }}</p>
+            <li v-for="member in memberList" ::key="member">{{member}}</li>
+            <br>
+            <pre>{{memberList}}</pre>
+            <p><img style="width: 200px" :src="imgUrl"></p>
+
+            <br><br><br>
+
+        </div>
+        <div class="container">
+            <input type="text" :value="name" @input="name = $event.target.value">
+            <button @click="showAlert" class="orange">alert ver</button>
+            <input type="text" @keyUp="valueUpdated">
+            <input type="text" @keyUp="value = $event.target.value">
+            <input type="text" @keydown.enter="value = $event.target.value">
+
+
+            <input type="text" @keydown.enter="value=$event.target.value">
+            <input type="text" @keydown="value=$event.target.value">
+            <input type="text" @keydown.enter="nameUpdated">
+            <input type="text" @keydown="value=name">
+            <input type="text" :value="value">
+            <p>{{value}}</p>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>

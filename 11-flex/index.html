@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src=""></script>
+    <!-- <link rel="stylesheet" href="../style.css"> -->
+    <style>
+        .box {
+            /* inline-size: 150px; */
+            inline-size: 150px;
+            background-color: orange;
+            /* overflow-wrap: break-word; */
+            /* overflow: hidden; */
+            /* word-break: break-all; */
+            overflow-wrap: break-word;
+            hyphens: manuel;
+        }
+        
+        .box1 {
+            word-break: break-all;
+            background-color: yellow;
+        }
+        
+        .box2 {
+            overflow-wrap: break-word;
+            background-color: green;
+        }
+        
+        .wrap {
+            inline-size: 150px;
+            overflow-wrap: break-word;
+            background-color: beige;
+        }
+        
+        .container {
+            display: flex;
+        }
+        
+        .dp {
+            width: 50%;
+            color: white;
+            text-shadow: 0 1px 3px rgba(black, 0.4);
+            padding: 10px;
+            font-size: 40px;
+            text-align: center;
+        }
+    </style>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div class="container">
+            <div class="dp dp-1">1</div>
+            <div class="dp dp-2">2</div>
+            <div class="dp dp-3">3</div>
+            <div class="dp dp-4">4</div>
+            <div class="dp dp-5">5</div>
+        </div>
+        <div class="wrap">akifemresavenruiekuiemukmiuieiueueiuieuieueieieuikmuiekmuiemkukmemkuueui</div>
+        <div class="box">
+            Llanfair­pwllgwyngy­llgogerychwyrndrobwllllantysiliogogogoch </div>
+        <div class="box box1">
+            uieuieuie uieuie uieuieueieieuikmuiekmuiemkukmemk
+        </div>
+
+        <div class="box box2">
+            uieuie uieuiuieei iue uieuieueieieuikmuiekmuiemkukmemk
+        </div>
+
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>

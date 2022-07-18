@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://unpkg.com/vue@next"></script>
+    <style>
+        .wrapper {
+            height: 100vh;
+            display: flex;
+            @for $i from 1 through 3 {
+                .div#{$i} {
+                    background: rgb(random(255), random(255), random(255));
+                }
+            }
+        }
+        
+        .divider {
+            height: 100vh;
+            width: 6px;
+            background: #fff;
+            transform: translateX(-3px);
+            position: absolute;
+            top: 0;
+            z-index: 1;
+            cursor: ew-resize;
+        }
+        
+        .center div {
+            height: 50vh;
+        }
+        
+        body {
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="wrapper" @mouseUp="endDragging()">
+            <div class="div1" :style="{
+              width: `${dividerPosition}%`
+            }">
+            </div>
+            <div class="divider" :style="{
+              left: `${dividerPosition}%`
+            }" @mouseDown="startDragging()">
+            </div>
+            <div class="center" :style="{
+              width: `${100 - dividerPosition}%`
+            }">
+                <div class="div2"></div>
+                <div class="div3"></div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
